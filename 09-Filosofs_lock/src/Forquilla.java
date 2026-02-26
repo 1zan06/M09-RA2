@@ -1,14 +1,9 @@
-
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Forquilla {
-    private int num;
-    private ReentrantLock bloqueig;
 
-
-    public Forquilla() {
-
-    }
+    private final int num;
+    private final ReentrantLock bloqueig;
 
     public Forquilla(int num) {
         this.num = num;
@@ -17,10 +12,6 @@ public class Forquilla {
 
     public int getNum() {
         return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
     }
 
     public void agafar() {
@@ -33,11 +24,7 @@ public class Forquilla {
         }
     }
 
-    public ReentrantLock getBloqueig() {
-        return bloqueig;
-    }
-
-    public void setBloqueig(ReentrantLock bloqueig) {
-        this.bloqueig = bloqueig;
+    public boolean esMeua() {
+        return bloqueig.isHeldByCurrentThread();
     }
 }
